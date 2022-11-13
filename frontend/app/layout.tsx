@@ -1,31 +1,21 @@
-/* eslint-disable @next/next/no-head-element */
+// These styles apply to every route in the application
+import './globals.css';
+import Head from "next/head";
+import NavBar from "./navbar";
 
-import Link from "next/link";
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
+export default function RootLayout({children}: {
+    children: React.ReactNode;
 }) {
-  return (
-    <html>
-      <head></head>
-      <body>
-      <main>
-          <nav>
-              <Link href="/">
-                  Home
-              </Link>
-              <Link href="/blog">
-                  Blog
-              </Link>
-              <Link href="/contact">
-                  Contact
-              </Link>
-          </nav>
-      </main>
-      {children}
-      </body>
-    </html>
-  );
+    return (
+        <html lang="en">
+        <Head>
+            <title>Tyler Marques</title>
+            <link rel="icon" href="/frontend/public/favicon.ico"/>
+        </Head>
+        <body className="flex h-full flex-col bg-gray-900">
+            <NavBar/>
+            {children}
+        </body>
+        </html>
+    );
 }
