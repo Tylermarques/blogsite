@@ -9,4 +9,19 @@ services:
       - 27017:27017
     volumes:
       - ./backend/data:/data/db
+  nextjs-blogsite:
+    build:
+      context: frontend
+    container_name: blogsite
+    restart: always
+    depends_on:
+      - mongodb_container
+    ports:
+      - "3000:3000"
+
+  nginx-proxy:
+    image: nginx
+    ports:
+      - "8080:80"
+
 
