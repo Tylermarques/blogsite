@@ -1,18 +1,17 @@
-// These styles apply to every route in the application
 import './globals.css';
-import Head from "next/head";
-import NavBar from "./navbar";
+// import Head from "next/head";
+import NavBar from "../components/navbar";
 
 export default function RootLayout({children}: {
     children: React.ReactNode;
 }) {
     return (
         <html lang="en">
-        <Head>
+        <head>
             <title>Tyler Marques</title>
             <link rel="icon" href="/frontend/public/favicon.ico"/>
-        </Head>
-        <body className="flex h-full flex-col bg-gray-900">
+        </head>
+        <body className="flex h-full flex-col bg-oxford-900">
             <NavBar/>
             {children}
         </body>
